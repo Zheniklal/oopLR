@@ -1,0 +1,10 @@
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\oopLR.exe.config
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\oopLR.exe
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\oopLR.pdb
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.csprojAssemblyReference.cache
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.MainForm.resources
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.Properties.Resources.resources
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.csproj.GenerateResource.cache
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.csproj.CoreCompileInputs.cache
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.exe
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.pdb
