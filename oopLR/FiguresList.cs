@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace oopLR
 {
@@ -15,13 +16,16 @@ namespace oopLR
             list = new List<Figure>();
         }
         public int Draw(Bitmap temp, Pen myPen)
-        {
+        { 
             if (list.Count == -1)
                 return 0;
             else
             {
                 for (int i = 0; i < list.Count; i++)
+                {
                     list[i].Drawing(temp, myPen);
+                    
+                }
                 return 1;
             }
         }

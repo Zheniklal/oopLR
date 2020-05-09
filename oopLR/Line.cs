@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace oopLR
 {
+    [Serializable]
     public class Line : Figure
     {
         private float x1, x2, y1, y2;

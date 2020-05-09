@@ -34,15 +34,20 @@
             this.Line = new System.Windows.Forms.ToolStripButton();
             this.Rectangle = new System.Windows.Forms.ToolStripButton();
             this.Ellipse = new System.Windows.Forms.ToolStripButton();
-            this.Circle = new System.Windows.Forms.ToolStripButton();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemColor = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemWidth = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBoxWidth = new System.Windows.Forms.ToolStripTextBox();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClearTheListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnAll = new System.Windows.Forms.ToolStripButton();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.toolStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -68,12 +73,10 @@
             this.Pencil,
             this.Line,
             this.Rectangle,
-            this.Ellipse,
-            this.Circle,
-            this.returnAll});
-            this.toolStrip.Location = new System.Drawing.Point(0, 28);
+            this.Ellipse});
+            this.toolStrip.Location = new System.Drawing.Point(0, 30);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1219, 27);
+            this.toolStrip.Size = new System.Drawing.Size(1219, 31);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
             // 
@@ -83,7 +86,7 @@
             this.Pencil.Image = global::oopLR.Properties.Resources.pencil;
             this.Pencil.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Pencil.Name = "Pencil";
-            this.Pencil.Size = new System.Drawing.Size(29, 28);
+            this.Pencil.Size = new System.Drawing.Size(29, 24);
             this.Pencil.Text = "Pencil";
             this.Pencil.Click += new System.EventHandler(this.tool_Click);
             // 
@@ -93,7 +96,7 @@
             this.Line.Image = global::oopLR.Properties.Resources.w128h1281390849416line128;
             this.Line.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(29, 28);
+            this.Line.Size = new System.Drawing.Size(29, 24);
             this.Line.Text = "Line";
             this.Line.Click += new System.EventHandler(this.tool_Click);
             // 
@@ -103,7 +106,7 @@
             this.Rectangle.Image = global::oopLR.Properties.Resources.Без_названия;
             this.Rectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Rectangle.Name = "Rectangle";
-            this.Rectangle.Size = new System.Drawing.Size(29, 28);
+            this.Rectangle.Size = new System.Drawing.Size(29, 24);
             this.Rectangle.Text = "Rectangle";
             this.Rectangle.Click += new System.EventHandler(this.tool_Click);
             // 
@@ -113,38 +116,30 @@
             this.Ellipse.Image = global::oopLR.Properties.Resources._33822;
             this.Ellipse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Ellipse.Name = "Ellipse";
-            this.Ellipse.Size = new System.Drawing.Size(29, 28);
+            this.Ellipse.Size = new System.Drawing.Size(29, 24);
             this.Ellipse.Text = "Ellipse";
             this.Ellipse.Click += new System.EventHandler(this.tool_Click);
-            // 
-            // Circle
-            // 
-            this.Circle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Circle.Image = global::oopLR.Properties.Resources.w256h2561372348471circle256;
-            this.Circle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(29, 28);
-            this.Circle.Text = "Circle";
-            this.Circle.Click += new System.EventHandler(this.tool_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.toolStripMenuItemColor,
             this.ToolStripMenuItemWidth,
             this.clearToolStripMenuItem,
+            this.ClearTheListToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1219, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1219, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItemColor
             // 
             this.toolStripMenuItemColor.Name = "toolStripMenuItemColor";
-            this.toolStripMenuItemColor.Size = new System.Drawing.Size(59, 26);
+            this.toolStripMenuItemColor.Size = new System.Drawing.Size(59, 24);
             this.toolStripMenuItemColor.Text = "Color";
             this.toolStripMenuItemColor.Click += new System.EventHandler(this.ToolStripMenuItemColor_Click);
             // 
@@ -153,7 +148,7 @@
             this.ToolStripMenuItemWidth.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBoxWidth});
             this.ToolStripMenuItemWidth.Name = "ToolStripMenuItemWidth";
-            this.ToolStripMenuItemWidth.Size = new System.Drawing.Size(63, 26);
+            this.ToolStripMenuItemWidth.Size = new System.Drawing.Size(63, 24);
             this.ToolStripMenuItemWidth.Text = "Width";
             // 
             // toolStripTextBoxWidth
@@ -167,26 +162,67 @@
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(57, 26);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.ClearToolStripMenuItem_Click);
+            // 
+            // ClearTheListToolStripMenuItem
+            // 
+            this.ClearTheListToolStripMenuItem.Name = "ClearTheListToolStripMenuItem";
+            this.ClearTheListToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
+            this.ClearTheListToolStripMenuItem.Text = "Clear The List";
+            this.ClearTheListToolStripMenuItem.Click += new System.EventHandler(this.DeleteTheListToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // returnAll
+            // fileToolStripMenuItem
             // 
-            this.returnAll.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.returnAll.Image = global::oopLR.Properties.Resources.Без_названия__1_;
-            this.returnAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.returnAll.Name = "returnAll";
-            this.returnAll.Size = new System.Drawing.Size(29, 24);
-            this.returnAll.Text = "Return all";
-            this.returnAll.Click += new System.EventHandler(this.tool_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "dat";
+            this.openFileDialog1.Filter = "DAT Files (*.dat)|*.dat";
+            this.openFileDialog1.FilterIndex = 0;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "dat";
+            this.saveFileDialog1.Filter = "DAT Files (*.dat)|*.dat";
+            this.saveFileDialog1.FilterIndex = 0;
+            this.saveFileDialog1.Title = "Save picture as...";
             // 
             // MainForm
             // 
@@ -223,9 +259,14 @@
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton Ellipse;
-        private System.Windows.Forms.ToolStripButton Circle;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxWidth;
-        private System.Windows.Forms.ToolStripButton returnAll;
+        private System.Windows.Forms.ToolStripMenuItem ClearTheListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

@@ -7,11 +7,11 @@ using System.Drawing;
 
 namespace oopLR
 {
+    [Serializable]
     public class Ellipse : Figure
     {
         private float x, y;
-        private float centerX, centerY;
-     
+        private float centerX,centerY;
         public Ellipse(float x, float y, float x1, float y1)
         {
             this.x = x;

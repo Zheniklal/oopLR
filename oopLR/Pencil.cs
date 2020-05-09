@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace oopLR
 {
+    [Serializable]
     class Pencil : Figure
     {
         private float x1, x2, y1, y2;

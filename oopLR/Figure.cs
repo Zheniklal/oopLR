@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace oopLR
 {
+    [Serializable]
     public abstract class Figure
     {
         public Color col;

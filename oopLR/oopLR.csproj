@@ -61,9 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Circle.cs" />
     <Compile Include="Ellipse.cs" />
+    <Compile Include="CollectionOfFigures.cs" />
     <Compile Include="Figure.cs" />
+    <Compile Include="FileManagement.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="FiguresList.cs" />
     <Compile Include="MainForm.cs">

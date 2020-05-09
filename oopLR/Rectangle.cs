@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace oopLR
 {
+    [Serializable]
     public class Rectangle : Figure
     {
         private float height;
