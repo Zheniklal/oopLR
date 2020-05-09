@@ -15,7 +15,7 @@ namespace oopLR
         {
             list = new List<Figure>();
         }
-        public int Draw(Bitmap temp, Pen myPen)
+        public int Draw(Bitmap temp)
         { 
             if (list.Count == -1)
                 return 0;
@@ -23,7 +23,7 @@ namespace oopLR
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    list[i].Drawing(temp, myPen);
+                    list[i].Drawing(temp);
                     
                 }
                 return 1;

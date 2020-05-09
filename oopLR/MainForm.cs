@@ -36,8 +36,9 @@ namespace oopLR
         private void PictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             isPressed = false;
+            Pen myPen = new Pen(foreColor, brushThickness);
             snapshot = (Bitmap)tempDraw.Clone();
-            Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2 });
+            Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, myPen });
             figuresList.list.Add(obj);
         }
 
@@ -46,14 +47,14 @@ namespace oopLR
            // if (isPressed) { 
             if (selectedTool != "Pencil") tempDraw = (Bitmap)snapshot.Clone();
             Pen myPen = new Pen(foreColor, brushThickness);
-            figuresList.Draw(tempDraw, myPen);
+            figuresList.Draw(tempDraw);
             if (currentFigure != null && tempDraw != null)
             {
                 try
                 {
-                    Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2 });
+                    Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, myPen });
 
-                    obj.Drawing(tempDraw, myPen);
+                    obj.Drawing(tempDraw);
                     if (selectedTool == "Pencil")
                     {
                         x1 = x2;
@@ -63,7 +64,7 @@ namespace oopLR
                 }
                 catch
                 {
-                    MessageBox.Show("12");
+                    MessageBox.Show("Error");
                 }
             }
             myPen.Dispose();

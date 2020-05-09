@@ -13,7 +13,7 @@ namespace oopLR
         private float height;
         private float width;
         private float x1, y1, x2, y2;
-        public Rectangle(float x1, float y1, float x2, float y2)
+        public Rectangle(float x1, float y1, float x2, float y2, Pen myPen)
         {
             this.x1 = x1;
             this.y1 = y1;
@@ -21,8 +21,9 @@ namespace oopLR
             this.y2 = y2;
             this.height = y2 - y1;
             this.width = x2 - x1;
+            this.myPen = myPen;
         }
-        public override void Drawing(Bitmap temp, Pen myPen)
+        public override void Drawing(Bitmap temp)
         {
             Graphics.FromImage(temp).DrawRectangle(myPen, x1, y1, width, height);
         }

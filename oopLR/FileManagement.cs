@@ -15,17 +15,25 @@ namespace oopLR
         public static List<Figure> OpenFile(string fileName)
         {
             List<Figure> figs = new List<Figure>();
-            BinaryFormatter bf = new BinaryFormatter();
-
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+            try
             {
-              //  figs = (List<Figure>)bf.Deserialize(fs);
-                figs = (List<Figure>)bf.Deserialize(fs);
+                BinaryFormatter bf = new BinaryFormatter();
+
+                using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
+                {
+                    figs = (List<Figure>)bf.Deserialize(fs);
+                }
+
+                MessageBox.Show("File uploaded.");
+
+                return figs;
             }
-
-            //MessageBox.Show("File uploaded.");
-
-            return figs;
+            catch
+            {
+                MessageBox.Show("Error");
+                return figs;
+            }
+           
 
         }
 

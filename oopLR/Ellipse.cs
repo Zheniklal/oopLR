@@ -12,16 +12,18 @@ namespace oopLR
     {
         private float x, y;
         private float centerX,centerY;
-        public Ellipse(float x, float y, float x1, float y1)
+        public Ellipse(float x, float y, float x1, float y1, Pen myPen)
         {
             this.x = x;
             this.y = y;
             this.centerX = x1;
             this.centerY = y1;
+            this.myPen = myPen;
         }
-        public override void Drawing(Bitmap temp, Pen myPen)
+        public override void Drawing(Bitmap temp)
         {
-            Graphics.FromImage(temp).DrawEllipse(myPen, x, y, centerX - x, centerY - y);
+            if (myPen != null)
+                Graphics.FromImage(temp).DrawEllipse(myPen, x, y, centerX - x, centerY - y);
         }
     }
 }

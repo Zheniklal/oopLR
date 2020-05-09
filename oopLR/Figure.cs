@@ -10,8 +10,7 @@ namespace oopLR
     [Serializable]
     public abstract class Figure
     {
-        public Color col;
-        public int brushThickness;
-        public abstract void Drawing(Bitmap temp, Pen myPen);
+        public Pen myPen;
+        public abstract void Drawing(Bitmap temp);
     }
 }
