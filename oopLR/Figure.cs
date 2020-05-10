@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace oopLR
 {
     [Serializable]
     public abstract class Figure
     {
-        public Pen myPen;
-        public abstract void Drawing(Bitmap temp);
+        public Color col;
+        public float thickness;
+        public abstract void Drawing(PaintEventArgs e);
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace oopLR
 {
+    [Serializable]
     public class FiguresList
     {
         public List<Figure> list;
@@ -15,7 +16,7 @@ namespace oopLR
         {
             list = new List<Figure>();
         }
-        public int Draw(Bitmap temp)
+        public int Draw(PaintEventArgs e)
         { 
             if (list.Count == -1)
                 return 0;
@@ -23,8 +24,7 @@ namespace oopLR
             {
                 for (int i = 0; i < list.Count; i++)
                 {
-                    list[i].Drawing(temp);
-                    
+                    list[i].Drawing(e);
                 }
                 return 1;
             }

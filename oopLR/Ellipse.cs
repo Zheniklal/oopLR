@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace oopLR
 {
@@ -12,18 +13,19 @@ namespace oopLR
     {
         private float x, y;
         private float centerX,centerY;
-        public Ellipse(float x, float y, float x1, float y1, Pen myPen)
+        public Ellipse(float x, float y, float x1, float y1, Color col, float thickness)
         {
             this.x = x;
             this.y = y;
             this.centerX = x1;
             this.centerY = y1;
-            this.myPen = myPen;
+            this.col = col;
+            this.thickness = thickness;
         }
-        public override void Drawing(Bitmap temp)
+        public override void Drawing(PaintEventArgs e)
         {
-            if (myPen != null)
-                Graphics.FromImage(temp).DrawEllipse(myPen, x, y, centerX - x, centerY - y);
+            Pen myPen = new Pen(col, thickness);
+            e.Graphics.DrawEllipse(myPen, x, y, centerX - x, centerY - y);
         }
     }
 }

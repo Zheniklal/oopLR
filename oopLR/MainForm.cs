@@ -14,11 +14,10 @@ namespace oopLR
     public partial class MainForm : Form
     {
         bool isPressed;
-        int x1, x2, y1, y2;
-        Bitmap snapshot, tempDraw;
+        float x1, x2, y1, y2;
         string selectedTool;
         Color foreColor;
-        int brushThickness;
+        float brushThickness;
         FiguresList figuresList;
         Type currentFigure;
 
@@ -36,25 +35,20 @@ namespace oopLR
         private void PictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             isPressed = false;
-            Pen myPen = new Pen(foreColor, brushThickness);
-            snapshot = (Bitmap)tempDraw.Clone();
-            Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, myPen });
+            Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, foreColor, brushThickness });
             figuresList.list.Add(obj);
         }
 
         private void PictureBox_Paint(object sender, PaintEventArgs e)
-        {
-           // if (isPressed) { 
-            if (selectedTool != "Pencil") tempDraw = (Bitmap)snapshot.Clone();
-            Pen myPen = new Pen(foreColor, brushThickness);
-            figuresList.Draw(tempDraw);
-            if (currentFigure != null && tempDraw != null)
+        { 
+            figuresList.Draw(e);
+            if (currentFigure != null)
             {
                 try
                 {
-                    Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, myPen });
+                    Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, foreColor, brushThickness });
 
-                    obj.Drawing(tempDraw);
+                    obj.Drawing(e);
                     if (selectedTool == "Pencil")
                     {
                         x1 = x2;
@@ -67,28 +61,11 @@ namespace oopLR
                     MessageBox.Show("Error");
                 }
             }
-            myPen.Dispose();
-            e.Graphics.DrawImageUnscaled(tempDraw, 0, 0);
-            //}
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ClearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Graphics g = pictureBox.CreateGraphics();
-            g.Clear(pictureBox.BackColor);
-
-            snapshot.Dispose();
-            snapshot = null;
-            tempDraw.Dispose();
-            tempDraw = null;
-
-            snapshot = new Bitmap(pictureBox.ClientRectangle.Width, pictureBox.ClientRectangle.Height);
-            tempDraw = (Bitmap)snapshot.Clone();
         }
 
         private void ToolStripTextBoxWidth_TextChanged(object sender, EventArgs e)
@@ -105,25 +82,12 @@ namespace oopLR
 
         }
 
-        private void DeleteTheListToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            figuresList.list.Clear();
-        }
-
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             figuresList.list.Clear();
 
             Graphics g = pictureBox.CreateGraphics();
             g.Clear(pictureBox.BackColor);
-
-            snapshot.Dispose();
-            snapshot = null;
-            tempDraw.Dispose();
-            tempDraw = null;
-
-            snapshot = new Bitmap(pictureBox.ClientRectangle.Width, pictureBox.ClientRectangle.Height);
-            tempDraw = (Bitmap)snapshot.Clone();
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,8 +100,6 @@ namespace oopLR
                 figuresList.list.AddRange(figs);
 
                 pictureBox.Invalidate();
-
-        
             }
         }
 
@@ -167,7 +129,6 @@ namespace oopLR
                 {
                     foreColor = colorDialog.Color;
                 }
-
             }
 
             private void PictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -176,15 +137,12 @@ namespace oopLR
                 isPressed = true;
                 x1 = e.X;
                 y1 = e.Y;
-                tempDraw = (Bitmap)snapshot.Clone();
             }
 
             public MainForm()
             {
                 InitializeComponent();
                 figuresList = new FiguresList();
-                snapshot = new Bitmap(pictureBox.ClientRectangle.Width, pictureBox.ClientRectangle.Height);
-                tempDraw = (Bitmap)snapshot.Clone();
                 foreColor = Color.Black;
                 brushThickness = 1;
                 Pencil.Checked = true;
@@ -195,7 +153,7 @@ namespace oopLR
           
             }
 
-          }   
-    }
+    }   
+}
 
 
