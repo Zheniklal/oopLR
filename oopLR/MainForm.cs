@@ -35,8 +35,16 @@ namespace oopLR
         private void PictureBox_MouseUp(object sender, MouseEventArgs e)
         {
             isPressed = false;
-            Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, foreColor, brushThickness });
-            figuresList.list.Add(obj);
+            try
+            {
+                Figure obj = (Figure)Activator.CreateInstance(currentFigure, new object[] { x1, y1, x2, y2, foreColor, brushThickness });
+                figuresList.list.Add(obj);
+            }
+            catch
+            {
+                MessageBox.Show("nothing to draw");
+            }
+            
         }
 
         private void PictureBox_Paint(object sender, PaintEventArgs e)
@@ -114,22 +122,24 @@ namespace oopLR
 
         private void tool_Click(object sender, EventArgs e)
         {
-            Line.Checked = false;
-            Rectangle.Checked = false;
-            Pencil.Checked = false;
-            Ellipse.Checked = false;
+            for (int i = 0; i < toolStrip.Items.Count; i++)
+            {
+                ToolStripButton tsb = new ToolStripButton();
+                tsb = (ToolStripButton)toolStrip.Items[i];
+                tsb.Checked = false;
+            } 
             ToolStripButton btnClicked = sender as ToolStripButton;
             btnClicked.Checked = true;
             selectedTool = btnClicked.Name;
         }
 
-            private void ToolStripMenuItemColor_Click(object sender, EventArgs e)
-            {
+        private void ToolStripMenuItemColor_Click(object sender, EventArgs e)
+        {
                 if (colorDialog.ShowDialog() == DialogResult.OK)
                 {
                     foreColor = colorDialog.Color;
                 }
-            }
+        }
 
             private void PictureBox_MouseDown(object sender, MouseEventArgs e)
             {
@@ -145,12 +155,25 @@ namespace oopLR
                 figuresList = new FiguresList();
                 foreColor = Color.Black;
                 brushThickness = 1;
-                Pencil.Checked = true;
-                selectedTool = "Pencil";
-             //   List<Type> figs = new List<Type>();
-             //   figs = CollectionOfFigures.GetClasses<Figure>(Assembly.GetExecutingAssembly());
-                currentFigure = Type.GetType("oopLR." + selectedTool);
-          
+                List<Type> figs = new List<Type>();
+                figs = CollectionOfFigures.GetClasses<Figure>(Assembly.GetExecutingAssembly());
+                for (int i = 0; i< figs.Count; i++)
+                {
+                    ToolStripButton btn = new ToolStripButton(figs[i].Name);
+                    toolStrip.Items.Add(btn);
+                    btn.Name = figs[i].Name;
+                    btn.Click += new EventHandler(tool_Click);
+                }
+                try
+                {
+                    selectedTool = figs[0].Name;
+                    ((ToolStripButton)toolStrip.Items[0]).Checked = true;
+                }
+                catch
+                {
+                    MessageBox.Show("no figs");
+                }
+                
             }
 
     }   

@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.Pencil = new System.Windows.Forms.ToolStripButton();
-            this.Line = new System.Windows.Forms.ToolStripButton();
-            this.Rectangle = new System.Windows.Forms.ToolStripButton();
-            this.Ellipse = new System.Windows.Forms.ToolStripButton();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +41,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.toolStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,60 +58,6 @@
             this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
             this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
             this.pictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseUp);
-            // 
-            // toolStrip
-            // 
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Pencil,
-            this.Line,
-            this.Rectangle,
-            this.Ellipse});
-            this.toolStrip.Location = new System.Drawing.Point(0, 28);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1219, 27);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "toolStrip";
-            // 
-            // Pencil
-            // 
-            this.Pencil.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Pencil.Image = global::oopLR.Properties.Resources.pencil;
-            this.Pencil.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Pencil.Name = "Pencil";
-            this.Pencil.Size = new System.Drawing.Size(29, 24);
-            this.Pencil.Text = "Pencil";
-            this.Pencil.Click += new System.EventHandler(this.tool_Click);
-            // 
-            // Line
-            // 
-            this.Line.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Line.Image = global::oopLR.Properties.Resources.w128h1281390849416line128;
-            this.Line.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(29, 24);
-            this.Line.Text = "Line";
-            this.Line.Click += new System.EventHandler(this.tool_Click);
-            // 
-            // Rectangle
-            // 
-            this.Rectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Rectangle.Image = global::oopLR.Properties.Resources.Без_названия;
-            this.Rectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Rectangle.Name = "Rectangle";
-            this.Rectangle.Size = new System.Drawing.Size(29, 24);
-            this.Rectangle.Text = "Rectangle";
-            this.Rectangle.Click += new System.EventHandler(this.tool_Click);
-            // 
-            // Ellipse
-            // 
-            this.Ellipse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Ellipse.Image = global::oopLR.Properties.Resources._33822;
-            this.Ellipse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Ellipse.Name = "Ellipse";
-            this.Ellipse.Size = new System.Drawing.Size(29, 24);
-            this.Ellipse.Text = "Ellipse";
-            this.Ellipse.Click += new System.EventHandler(this.tool_Click);
             // 
             // menuStrip1
             // 
@@ -206,6 +147,15 @@
             this.saveFileDialog1.FilterIndex = 0;
             this.saveFileDialog1.Title = "Save picture as...";
             // 
+            // toolStrip
+            // 
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(1219, 25);
+            this.toolStrip.TabIndex = 1;
+            this.toolStrip.Text = "toolStrip";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,8 +168,6 @@
             this.Name = "MainForm";
             this.Text = "Рисовальник";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -230,16 +178,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.ToolStrip toolStrip;
-        private System.Windows.Forms.ToolStripButton Pencil;
-        private System.Windows.Forms.ToolStripButton Line;
-        private System.Windows.Forms.ToolStripButton Rectangle;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemColor;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemWidth;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton Ellipse;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxWidth;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -247,6 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStrip toolStrip;
     }
 }
 
