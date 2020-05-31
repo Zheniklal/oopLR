@@ -1,0 +1,9 @@
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\obj\Debug\TrapeziumLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\bin\Debug\TrapeziumLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\bin\Debug\TrapeziumLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\obj\Debug\TrapeziumLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\obj\Debug\TrapeziumLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\bin\Debug\FigureLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\bin\Debug\FigureLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\obj\Debug\TrapeziumLibrary.csprojAssemblyReference.cache
+C:\Users\Владелец\source\repos\oopLR\TrapeziumLibrary\obj\Debug\TrapeziumLibrary.csproj.CopyComplete

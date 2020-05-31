@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using TrapeziumLibrary;
+using FigureLibrary;
 
 namespace oopLR
 {
@@ -20,6 +22,7 @@ namespace oopLR
         float brushThickness;
         FiguresList figuresList;
         Type currentFigure;
+        List<Type> availableFigures = new List<Type>();
 
         private void PictureBox_MouseMove(object sender, MouseEventArgs e)
         {
@@ -133,6 +136,36 @@ namespace oopLR
             selectedTool = btnClicked.Name;
         }
 
+        private void ToolStripMenuItemAddFigures_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogDLL.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = openFileDialogDLL.FileName;
+
+                try
+                {
+                    List<Type> figs = CollectionOfFigures.GetClasses<Figure>(Assembly.LoadFile(fileName));
+
+                    foreach (Type type in figs)
+                    {
+                        availableFigures.Add(type);
+                    }
+
+                    for (int i = 0; i < figs.Count; i++)
+                    {
+                        ToolStripButton btn = new ToolStripButton(figs[i].Name);
+                        toolStrip.Items.Add(btn);
+                        btn.Name = figs[i].Name;
+                        btn.Click += new EventHandler(tool_Click);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Problems");
+                }
+            }
+        }
+
         private void ToolStripMenuItemColor_Click(object sender, EventArgs e)
         {
                 if (colorDialog.ShowDialog() == DialogResult.OK)
@@ -143,7 +176,16 @@ namespace oopLR
 
             private void PictureBox_MouseDown(object sender, MouseEventArgs e)
             {
-                currentFigure = Type.GetType("oopLR." + selectedTool);
+                int index = 0;
+                for (int i = 0; i < availableFigures.Count; i++) 
+                {
+                    if (((ToolStripButton)toolStrip.Items[i]).Checked)
+                    {
+                        index = i;
+                    }
+                }
+                currentFigure = availableFigures[index];
+
                 isPressed = true;
                 x1 = e.X;
                 y1 = e.Y;
@@ -157,6 +199,11 @@ namespace oopLR
                 brushThickness = 1;
                 List<Type> figs = new List<Type>();
                 figs = CollectionOfFigures.GetClasses<Figure>(Assembly.GetExecutingAssembly());
+                foreach (Type type in figs)
+                {
+                    availableFigures.Add(type);
+                }
+                
                 for (int i = 0; i< figs.Count; i++)
                 {
                     ToolStripButton btn = new ToolStripButton(figs[i].Name);

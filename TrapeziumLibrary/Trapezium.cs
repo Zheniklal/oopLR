@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using FigureLibrary;
 using System.Drawing;
+using System.Windows.Forms;
 
-namespace oopLR
+
+namespace TrapeziumLibrary
 {
     [Serializable]
-    class Trapezium : Figure
+    public class Trapezium : Figure
     {
         private float x1, y1, x2, y2;
 

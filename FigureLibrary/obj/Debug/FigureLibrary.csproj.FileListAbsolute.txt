@@ -1,0 +1,6 @@
+C:\Users\Владелец\source\repos\oopLR\FigureLibrary\obj\Debug\FigureLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Владелец\source\repos\oopLR\FigureLibrary\bin\Debug\FigureLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\FigureLibrary\bin\Debug\FigureLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\FigureLibrary\obj\Debug\FigureLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\FigureLibrary\obj\Debug\FigureLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\FigureLibrary\obj\Debug\FigureLibrary.csprojAssemblyReference.cache

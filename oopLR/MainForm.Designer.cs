@@ -42,6 +42,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripMenuItemAddFigures = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialogDLL = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,10 +68,11 @@
             this.fileToolStripMenuItem,
             this.toolStripMenuItemColor,
             this.ToolStripMenuItemWidth,
+            this.toolStripMenuItemAddFigures,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1219, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1219, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,34 +83,34 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // toolStripMenuItemColor
             // 
             this.toolStripMenuItemColor.Name = "toolStripMenuItemColor";
-            this.toolStripMenuItemColor.Size = new System.Drawing.Size(59, 24);
+            this.toolStripMenuItemColor.Size = new System.Drawing.Size(59, 26);
             this.toolStripMenuItemColor.Text = "Color";
             this.toolStripMenuItemColor.Click += new System.EventHandler(this.ToolStripMenuItemColor_Click);
             // 
@@ -116,7 +119,7 @@
             this.ToolStripMenuItemWidth.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBoxWidth});
             this.ToolStripMenuItemWidth.Name = "ToolStripMenuItemWidth";
-            this.ToolStripMenuItemWidth.Size = new System.Drawing.Size(63, 24);
+            this.ToolStripMenuItemWidth.Size = new System.Drawing.Size(63, 26);
             this.ToolStripMenuItemWidth.Text = "Width";
             // 
             // toolStripTextBoxWidth
@@ -130,7 +133,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -150,11 +153,24 @@
             // toolStrip
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip.Location = new System.Drawing.Point(0, 30);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1219, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1219, 31);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
+            // 
+            // toolStripMenuItemAddFigures
+            // 
+            this.toolStripMenuItemAddFigures.Name = "toolStripMenuItemAddFigures";
+            this.toolStripMenuItemAddFigures.Size = new System.Drawing.Size(110, 26);
+            this.toolStripMenuItemAddFigures.Text = "Add figure(s)";
+            this.toolStripMenuItemAddFigures.Click += new System.EventHandler(this.ToolStripMenuItemAddFigures_Click);
+            // 
+            // openFileDialogDLL
+            // 
+            this.openFileDialogDLL.DefaultExt = "dll";
+            this.openFileDialogDLL.Filter = "DLL Files (.dll)|*.dll";
+            this.openFileDialogDLL.FilterIndex = 0;
             // 
             // MainForm
             // 
@@ -191,6 +207,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAddFigures;
+        private System.Windows.Forms.OpenFileDialog openFileDialogDLL;
     }
 }
 

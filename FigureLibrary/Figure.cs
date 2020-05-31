@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace oopLR
+
+namespace FigureLibrary
 {
     [Serializable]
     public abstract class Figure

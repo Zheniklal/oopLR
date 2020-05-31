@@ -8,3 +8,8 @@ C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.csproj.Genera
 C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.csproj.CoreCompileInputs.cache
 C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.exe
 C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.pdb
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\FigureLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\TrapeziumLibrary.dll
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\FigureLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\oopLR\bin\Debug\TrapeziumLibrary.pdb
+C:\Users\Владелец\source\repos\oopLR\oopLR\obj\Debug\oopLR.csproj.CopyComplete

@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oopLR", "oopLR\oopLR.csproj", "{71CD9F25-7AD1-42BA-8BCE-76A04FC64053}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrapeziumLibrary", "TrapeziumLibrary\TrapeziumLibrary.csproj", "{FAD8B331-9AB1-4C44-A79F-2B45492EDCB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureLibrary", "FigureLibrary\FigureLibrary.csproj", "{1F1FBCBB-45FB-4813-AE35-5007EEB42150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{71CD9F25-7AD1-42BA-8BCE-76A04FC64053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71CD9F25-7AD1-42BA-8BCE-76A04FC64053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71CD9F25-7AD1-42BA-8BCE-76A04FC64053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD8B331-9AB1-4C44-A79F-2B45492EDCB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD8B331-9AB1-4C44-A79F-2B45492EDCB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD8B331-9AB1-4C44-A79F-2B45492EDCB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD8B331-9AB1-4C44-A79F-2B45492EDCB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F1FBCBB-45FB-4813-AE35-5007EEB42150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1FBCBB-45FB-4813-AE35-5007EEB42150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1FBCBB-45FB-4813-AE35-5007EEB42150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1FBCBB-45FB-4813-AE35-5007EEB42150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
